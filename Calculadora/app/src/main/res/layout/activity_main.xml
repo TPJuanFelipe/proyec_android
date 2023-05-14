@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/etNumber1"
+        android:layout_width="295dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="228dp"
+        android:hint="Ingresa un número"
+        android:inputType="numberDecimal"
+        android:textColor="#530B0B"
+        android:textColorHighlight="#530B0B"
+        android:textColorHint="#811B1B"
+        android:textColorLink="#530B0B"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNumber2"
+        android:layout_width="295dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:hint="Ingresa un número"
+        android:inputType="numberDecimal"
+        android:textColor="#530B0B"
+        android:textColorHighlight="#530B0B"
+        android:textColorHint="#530B0B"
+        android:textColorLink="#530B0B"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNumber1" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="358dp"
+        android:layout_height="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNumber2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etNumber1"
+                android:layout_weight="1"
+                android:text="Sumar" />
+
+            <Button
+                android:id="@+id/buttonSubtract"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonAdd"
+                android:layout_weight="1"
+                android:text="Restar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonMultiply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonSubtract"
+                android:layout_weight="1"
+                android:text="Multipli" />
+
+            <Button
+                android:id="@+id/buttonDivide"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonMultiply"
+                android:layout_weight="1"
+                android:text="Dividir" />
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imaEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:srcCompat="@drawable/btn_arraw1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
