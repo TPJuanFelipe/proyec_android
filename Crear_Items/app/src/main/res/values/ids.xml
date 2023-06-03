@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="etNombre" type="id" />
+    <item name="etCantidad" type="id" />
+    <item name="btnInsertar" type="id" />
+    <item name="btnModificar" type="id" />
+    <item name="btnEliminar" type="id" />
+</resources>
