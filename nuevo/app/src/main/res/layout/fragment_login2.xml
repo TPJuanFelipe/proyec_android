@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frag1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ED5481AE"
+    tools:context=".loginFragment2">
+
+
+    <ImageView
+        android:id="@+id/correo_info_login"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="4dp"
+        android:onClick="onClick"
+        android:src="@drawable/info_icono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/pasword_info_login"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="4dp"
+        android:onClick="onClick"
+        android:src="@drawable/info_icono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iniusuario" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="113dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="208dp"
+        android:background="#342D90C5"
+        android:text="Iniciar"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="Iniciar secion "
+        android:textAlignment="gravity"
+        android:textSize="25dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/iniusuario"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="50dp"
+        android:drawableStart="@drawable/name"
+        android:hint="Correo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/Inipassword"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="50dp"
+        android:drawableStart="@drawable/password"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iniusuario" />
+
+    <Button
+        android:id="@+id/registro"
+        android:layout_width="301dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="24dp"
+        android:background="#00FFFFFF"
+        android:text="¿Aun no estas registrado?Registrar."
+        android:textColor="#050303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
