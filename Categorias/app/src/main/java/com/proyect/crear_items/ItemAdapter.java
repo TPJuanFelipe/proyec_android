@@ -1,5 +1,4 @@
-package com.proyect.categorias;
-
+package com.proyect.crear_items;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.proyect.categorias.R;
 
 import java.util.List;
 
@@ -26,20 +27,38 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate( R.layout.item_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Item item = itemList.get(position);
-        holder.bind(item);
+        holder.nombreTextView.setText(item.getNombre());
+        holder.cantidadTextView.setText(String.valueOf(item.getCantidad()));
+        holder.agotadoTextView.setText(item.isAgotado() ? "No disponible" : "Disponible");
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (itemClickListener != null) {
+                    itemClickListener.onItemClick(item);
+                }
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
-        return itemList.size();
+        if (itemList != null) {
+            return itemList.size();
+        } else {
+            return 0;
+        }
     }
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nombreTextView;
@@ -51,23 +70,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             nombreTextView = itemView.findViewById(R.id.nombreTextView);
             cantidadTextView = itemView.findViewById(R.id.cantidadTextView);
             agotadoTextView = itemView.findViewById(R.id.agotadoTextView);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION && itemClickListener != null) {
-                        Item item = itemList.get(position);
-                        itemClickListener.onItemClick(item);
-                    }
-                }
-            });
-        }
-
-        public void bind(Item item) {
-            nombreTextView.setText(item.getNombre());
-            cantidadTextView.setText(String.valueOf(item.getCantidad()));
-            agotadoTextView.setText(item.isAgotado() ? "Disponible" : "No disponible");
         }
     }
 
@@ -75,4 +77,3 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         void onItemClick(Item item);
     }
 }
-

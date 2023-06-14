@@ -5,7 +5,9 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-public class Items_Categorias implements Parcelable {
+import com.proyect.crear_items.Item;
+
+public class Items_Categorias extends Item implements Parcelable {
 
     private int id;
     private String nombre;

@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.proyect.crear_items.Item;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,21 +16,25 @@ public class Db_Categorias extends SQLiteOpenHelper {
 
     private static  final  String DATABASE_NOMBRE = "database_Categorias";
 
-    private static final int DABASE_VERSION = 4;
+    private static final int DABASE_VERSION = 2;
     private static final String TABLA_CATEGORIAS = "categorias";
     private static final String COLUMNA_ID = "id_categoria";
     private static final String COLUMNA_NOMBRE = "nombre_categoria";
 
+    //*
     private static final String TABLE_NAME = "items";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_NOMBRE = "nombre";
     private static final String COLUMN_CANTIDAD = "cantidad";
     private static final String COLUMN_AGOTADO = "agotado";
 
+
+
     public Db_Categorias ( Context context){
         super(context,DATABASE_NOMBRE, null, DABASE_VERSION );
 
     }
+
 
     @Override
     public void onCreate ( SQLiteDatabase db ) {
@@ -41,7 +47,10 @@ public class Db_Categorias extends SQLiteOpenHelper {
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_NOMBRE + " TEXT," +
                 COLUMN_CANTIDAD + " INTEGER," +
-                COLUMN_AGOTADO + " INTEGER) ";
+                COLUMN_AGOTADO + " INTEGER) "
+                ;
+
+
         db.execSQL(createTableQuery);
     }
 
@@ -58,11 +67,12 @@ public class Db_Categorias extends SQLiteOpenHelper {
     public void insertItem(Items_Categorias item){
         SQLiteDatabase db = this.getWritableDatabase ();
         ContentValues values = new ContentValues ();
-        values.put ( COLUMNA_NOMBRE, item.getNombre () );
-        db.insert ( TABLA_CATEGORIAS, null , values );
+        values.put(COLUMNA_NOMBRE, item.getNombre());
+        values.put("id_categoria", item.getId ()); // Agregar el id_categoria
+        db.insert(TABLA_CATEGORIAS, null, values);
         db.close();
-
     }
+
 
     public List<Items_Categorias> getAllItem(){
         List<Items_Categorias> ListItem = new ArrayList<> ();
@@ -102,7 +112,8 @@ public class Db_Categorias extends SQLiteOpenHelper {
         db.delete(TABLA_CATEGORIAS, COLUMNA_ID + "=?", new String[]{String.valueOf(item.getId())});
         db.close();
     }
-    public void insertItem(Item item) {
+
+    public void insertItem( Item item) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_NOMBRE, item.getNombre());
@@ -157,5 +168,36 @@ public class Db_Categorias extends SQLiteOpenHelper {
         db.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{String.valueOf(item.getId())});
         db.close();
     }
+    @SuppressLint("Range")
+    public List<Item> getItemsByCategoria ( int idCategoria ) {
+        List<Item> itemList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE id_categoria = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(idCategoria)});
+
+        if (cursor.moveToFirst()) {
+            do {
+                 int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
+                String nombre = cursor.getString(cursor.getColumnIndex(COLUMN_NOMBRE));
+                int cantidad = cursor.getInt(cursor.getColumnIndex(COLUMN_CANTIDAD));
+                boolean agotado = cursor.getInt(cursor.getColumnIndex(COLUMN_AGOTADO)) == 1;
+
+                Item item = new Item();
+                item.setId(id);
+                item.setNombre(nombre);
+                item.setCantidad(cantidad);
+                item.setAgotado(agotado);
+
+                itemList.add(item);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return itemList;
+    }
+
 
 }

@@ -42,6 +42,7 @@ String crearNuevasActividades;
             public void onClick ( View view ) {
 
                 agregar_item_categoria ();
+                requireActivity().onBackPressed();
 
             }
         } );
@@ -50,6 +51,7 @@ String crearNuevasActividades;
             @Override
             public void onClick ( View view ) {
                 modifi_item_categoria ();
+                requireActivity().onBackPressed();
 
             }
         } );
@@ -58,6 +60,7 @@ String crearNuevasActividades;
             @Override
             public void onClick ( View view ) {
                 eliminar_item_categoria ();
+                requireActivity().onBackPressed();
 
             }
         } );
@@ -98,7 +101,7 @@ String crearNuevasActividades;
         Toast.makeText(requireContext(), "Item agregado", Toast.LENGTH_SHORT).show();
         db_categorias.insertItem ( newItem );
         edt_categoria.setText ( "" );
-        crearNuevaActividad(newItem);
+
 
     }
 

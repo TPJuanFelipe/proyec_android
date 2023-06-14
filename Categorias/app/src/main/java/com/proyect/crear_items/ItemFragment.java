@@ -1,7 +1,9 @@
-package com.proyect.categorias;
+package com.proyect.crear_items;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.proyect.categorias.Db_Categorias;
+import com.proyect.categorias.R;
+
 public class ItemFragment extends Fragment {
     private EditText nombreEditText;
     private EditText cantidadEditText;
@@ -25,26 +30,29 @@ public class ItemFragment extends Fragment {
     private ImageView eliminarButton;
     private Db_Categorias databaseHelper;
     private Item currentItem;
-    private Spinner insert_categoria;
+    Spinner insert_categoria;
+
 
     @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_item, container, false);
+        View view = inflater.inflate( R.layout.fragment_item, container, false);
         nombreEditText = view.findViewById(R.id.nombreEditText);
         cantidadEditText = view.findViewById(R.id.cantidadEditText);
         agotadoCheckBox = view.findViewById(R.id.agotadoCheckBox);
         agregarButton = view.findViewById(R.id.agregarButton);
         modificarButton = view.findViewById(R.id.modificarButton);
         eliminarButton = view.findViewById(R.id.eliminarButton);
-        insert_categoria = view.findViewById(R.id.categoria_Insert);
-        databaseHelper = new Db_Categorias (requireContext());
+        insert_categoria= view.findViewById ( R.id.categoria_Insert );
+        databaseHelper = new Db_Categorias (requireContext ());
 
         agregarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 agregarItem();
+                Intent intent = new Intent(getActivity(), Crud_herramientas.class);
+                startActivity(intent);
             }
         });
 
@@ -52,6 +60,8 @@ public class ItemFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 modificarItem();
+                Intent intent = new Intent(getActivity(), Crud_herramientas.class);
+                startActivity(intent);
             }
         });
 
@@ -64,6 +74,7 @@ public class ItemFragment extends Fragment {
 
         return view;
     }
+
 
     public static ItemFragment newInstance(Item item) {
         ItemFragment fragment = new ItemFragment();
@@ -100,12 +111,12 @@ public class ItemFragment extends Fragment {
 
         databaseHelper.insertItem(newItem);
 
-        Toast.makeText(requireContext(), "Item agregado", Toast.LENGTH_SHORT).show();
-
         // Limpiar los campos de entrada
         nombreEditText.setText("");
         cantidadEditText.setText("");
         agotadoCheckBox.setChecked(false);
+
+        Toast.makeText(requireContext(), "Item agregado", Toast.LENGTH_SHORT).show();
     }
 
     private void modificarItem() {
@@ -132,6 +143,7 @@ public class ItemFragment extends Fragment {
             requireActivity().onBackPressed();
         }
     }
+
 
     private void mostrarDialogoEliminar() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());

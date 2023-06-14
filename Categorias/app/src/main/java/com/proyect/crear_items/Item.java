@@ -1,4 +1,4 @@
-package com.proyect.categorias;
+package com.proyect.crear_items;
 
 import android.os.Parcel;
 import android.os.Parcelable;

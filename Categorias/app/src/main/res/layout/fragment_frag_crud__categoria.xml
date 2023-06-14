@@ -28,33 +28,37 @@
             android:id="@+id/btn_elimi_categoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="130dp"
-            android:layout_marginBottom="16dp"
             android:layout_weight="1"
             android:background="@drawable/eliminar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_modifi_categoria"
+            app:layout_constraintTop_toBottomOf="@+id/nombre_categoria" />
 
         <ImageView
             android:id="@+id/btn_modifi_categoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:background="@drawable/modifi"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_elimi_categoria" />
+            app:layout_constraintEnd_toStartOf="@+id/btn_elimi_categoria"
+            app:layout_constraintStart_toEndOf="@+id/btn_insert_categoria"
+            app:layout_constraintTop_toBottomOf="@+id/nombre_categoria" />
 
         <ImageView
             android:id="@+id/btn_insert_categoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="122dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:background="@drawable/insert"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_modifi_categoria" />
+            app:layout_constraintEnd_toStartOf="@+id/btn_modifi_categoria"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nombre_categoria" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

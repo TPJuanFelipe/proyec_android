@@ -12,11 +12,10 @@
         android:theme="@style/Theme.Categorias"
         tools:targetApi="31">
         <activity
-            android:name=".Vista"
+            android:name="com.proyect.crear_items.Crud_herramientas"
             android:exported="false" />
-        <activity
-            android:name=".ItemAdapter"
-            android:exported="false" />
+
+
         <activity
             android:name=".NuevaActividad"
             android:exported="false" />

@@ -8,18 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.proyect.crear_items.Crud_herramientas;
+
 public class MainActivity extends AppCompatActivity {
 
-     ImageView ir;
-     ImageView btn_ir_itemHerra;
-    @SuppressLint("MissingInflatedId")
+
+    @SuppressLint({"MissingInflatedId", "LocalSuppress"})
     @Override
     protected void onCreate ( Bundle savedInstanceState ) {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_main );
-         ir = findViewById(R.id.imv_IrCategoria);
-         btn_ir_itemHerra= findViewById ( R.id.Ir_btn_itemHerra );
-        ir.setOnClickListener(new View.OnClickListener() {
+        ImageView ir_Catego = findViewById(R.id.imv_IrCategoria);
+        ir_Catego.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent ir = new Intent(MainActivity.this, Vista_categorias.class);
@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        btn_ir_itemHerra.setOnClickListener(new View.OnClickListener() {
+         ImageView ir_Herra = findViewById(R.id.imv_IrHerramientas);
+        ir_Herra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ir = new Intent(MainActivity.this, Vista.class);
+                Intent ir = new Intent(MainActivity.this, Crud_herramientas.class);
                 startActivity(ir);
             }
         });
