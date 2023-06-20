@@ -1,63 +1,71 @@
 package com.proyect.categorias;
 
+import android.content.ClipData;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.NonNull;
+public class Items_Categorias implements Parcelable {
+    private int id_categoria;
+    private String categorias;
+    private int identifi_admin;
 
-import com.proyect.crear_items.Item;
-
-public class Items_Categorias extends Item implements Parcelable {
-
-    private int id;
-    private String nombre;
-
-    public Items_Categorias(){}
-
-    protected Items_Categorias (Parcel in){
-        id= in.readInt ();
-        nombre= in.readString ();
-
+    public Items_Categorias() {
+        // Constructor vacío
     }
+
+    protected Items_Categorias(Parcel in) {
+        id_categoria = in.readInt ();
+        categorias = in.readString ();
+        identifi_admin = in.readInt ();
+    }
+
     public static final Creator<Items_Categorias> CREATOR = new Creator<Items_Categorias> () {
         @Override
-        public Items_Categorias createFromParcel ( Parcel in  ) {
+        public Items_Categorias createFromParcel( Parcel in) {
             return new Items_Categorias (in);
         }
 
         @Override
-        public Items_Categorias[] newArray ( int size ) {
+        public Items_Categorias[] newArray( int size) {
             return new Items_Categorias[size];
+
         }
     };
-
-    public int getId () {
-        return id;
+    public int getId_categoria () {
+        return id_categoria;
     }
 
-    public void setId ( int id ) {
-        this.id = id;
+    public String getCategorias () {
+        return categorias;
     }
 
-    public String getNombre () {
-        return nombre;
+    public int getIdentifi_admin () {
+        return identifi_admin;
     }
 
-    public void setNombre ( String nombre ) {
-        this.nombre = nombre;
+    public void setId_categoria ( int id_categoria ) {
+        this.id_categoria = id_categoria;
     }
 
+    public void setCategorias ( String categorias ) {
+        this.categorias = categorias;
+    }
 
+    public void setIdentifi_admin ( int identifi_admin ) {
+        this.identifi_admin = identifi_admin;
+    }
 
     @Override
-    public int describeContents () {
+    public int describeContents() {
         return 0;
     }
 
     @Override
-    public void writeToParcel ( @NonNull Parcel parcel, int i ) {
-        parcel.writeInt ( id );
-        parcel.writeString ( nombre );
-
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id_categoria);
+        dest.writeString ( categorias );
+        dest.writeInt ( identifi_admin );
     }
+
+
 }

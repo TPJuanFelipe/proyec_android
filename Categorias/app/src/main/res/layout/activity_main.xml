@@ -6,63 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Categorias"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="@+id/imv_IrCategoria"
-        app:layout_constraintHorizontal_bias="0.748"
-        app:layout_constraintStart_toStartOf="@+id/imv_IrCategoria"
-        app:layout_constraintTop_toBottomOf="@+id/imv_IrCategoria" />
 
-    <ImageView
-        android:id="@+id/imv_IrCategoria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="196dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/btn_arraw1" />
-
-    <ImageView
-        android:id="@+id/imv_IrHerramientas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="196dp"
-        android:rotationY="190"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/btn_arraw1" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Herramientas"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="@+id/imv_IrHerramientas"
-        app:layout_constraintStart_toStartOf="@+id/imv_IrHerramientas"
-        app:layout_constraintTop_toBottomOf="@+id/imv_IrHerramientas" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="233dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="88dp"
-        android:background="@drawable/perfin_background"
-        android:text="INSERTAR"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/ir_frag_categoria"
+        android:layout_width="57dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_arraw1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conte"
+        android:layout_width="410dp"
+        android:layout_height="221dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
