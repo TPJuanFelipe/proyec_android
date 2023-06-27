@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="408dp"
+        android:layout_height="302dp"
+        android:background="@drawable/top_background1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/edt_identifi"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:ems="10"
+        android:hint="identificacion"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_tipo_identifi"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Tipo_identifi"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/edt_identifi"
+        app:layout_constraintStart_toStartOf="@+id/edt_identifi"
+        app:layout_constraintTop_toBottomOf="@+id/edt_identifi" />
+
+    <EditText
+        android:id="@+id/edt_nombre_traba"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint=" Nombre"
+        android:drawableStart="@drawable/name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/edt_tipo_identifi"
+        app:layout_constraintStart_toStartOf="@+id/edt_tipo_identifi"
+        app:layout_constraintTop_toBottomOf="@+id/edt_tipo_identifi" />
+
+    <EditText
+        android:id="@+id/edt_correo_traba"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="  Correo"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/email"
+        app:layout_constraintEnd_toEndOf="@+id/edt_nombre_traba"
+        app:layout_constraintStart_toStartOf="@+id/edt_nombre_traba"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre_traba" />
+
+    <EditText
+        android:id="@+id/edt_contrasena"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="  Contraseña"
+        android:drawableStart="@drawable/password"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/edt_usuario"
+        app:layout_constraintStart_toStartOf="@+id/edt_usuario"
+        app:layout_constraintTop_toBottomOf="@+id/edt_usuario" />
+
+    <EditText
+        android:id="@+id/edt_usuario"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint=" Usuario"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/name"
+        app:layout_constraintEnd_toEndOf="@+id/edt_correo_traba"
+        app:layout_constraintStart_toStartOf="@+id/edt_correo_traba"
+        app:layout_constraintTop_toBottomOf="@+id/edt_correo_traba" />
+
+    <ImageView
+        android:id="@+id/btn_iniciar_sesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/btn_arraw1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_contrasena" />
+</androidx.constraintlayout.widget.ConstraintLayout>

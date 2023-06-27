@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="408dp"
+        android:layout_height="303dp"
+        android:background="@drawable/top_background2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/edt_correo_inicioSesion"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:drawableStart="@drawable/email"
+        android:ems="10"
+        android:hint="  Correo"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <EditText
+        android:id="@+id/edt_contrasena_inicioSesion"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="  Contraseña"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/password"
+        app:layout_constraintEnd_toEndOf="@+id/edt_correo_inicioSesion"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edt_correo_inicioSesion"
+        app:layout_constraintTop_toBottomOf="@+id/edt_correo_inicioSesion" />
+
+    <ImageView
+        android:id="@+id/btn_iniciar_sesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:src="@drawable/btn_arraw1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_contrasena_inicioSesion" />
+</androidx.constraintlayout.widget.ConstraintLayout>
