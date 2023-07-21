@@ -1,0 +1,126 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff"
+    tools:context="com.proyect.herramienta.crud_herramienta">
+
+
+    <EditText
+        android:id="@+id/edt_nombre_herra_crud"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="   Nombre herramienta"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_id_herra_crud"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Id herra"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre_herra_crud" />
+
+    <EditText
+        android:id="@+id/edt_id_catego_herra_crud"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:hint="Id catego"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre_herra_crud" />
+
+    <EditText
+        android:id="@+id/edt_cantidad_herra_crud"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Cantidad"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_id_herra_crud" />
+
+    <EditText
+        android:id="@+id/edt_descrip_herra_crud"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Descripcion"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_cantidad_herra_crud" />
+
+    <EditText
+        android:id="@+id/edt_imagen_herra_crud"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Imagen"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_descrip_herra_crud" />
+
+    <EditText
+        android:id="@+id/edt_codigo_herra_crud"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:hint="Id admin"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_id_catego_herra_crud" />
+
+    <ImageView
+        android:id="@+id/img_insertar_herra"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/insert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_imagen_herra_crud" />
+
+    <ImageView
+        android:id="@+id/img_modifi_herra"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/modifi"
+        app:layout_constraintEnd_toStartOf="@+id/img_eliminar_herra"
+        app:layout_constraintStart_toEndOf="@+id/img_insertar_herra"
+        app:layout_constraintTop_toBottomOf="@+id/edt_imagen_herra_crud" />
+
+    <ImageView
+        android:id="@+id/img_eliminar_herra"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:src="@drawable/eliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_imagen_herra_crud" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

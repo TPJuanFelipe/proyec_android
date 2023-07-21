@@ -1,0 +1,208 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff"
+    tools:context="com.proyect.categoria.menu_frag_Catego">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="186dp"
+        android:layout_height="727dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/banner_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="125dp"
+                android:layout_height="31dp"
+                android:text="MENU CRUD"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cL_vista_cateHerra"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintEnd_toEndOf="@+id/cL_crud_herra"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/cL_crud_herra"
+            app:layout_constraintTop_toBottomOf="@+id/cL_crud_herra">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="143dp"
+                android:layout_height="31dp"
+                android:text="Vista Cate/Herra"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.538" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cL_crud_frag_categoria"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+            <TextView
+                android:layout_width="143dp"
+                android:layout_height="31dp"
+                android:text="Crud categorias"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.538" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cL_crud_herra"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintEnd_toEndOf="@+id/cL_crud_frag_categoria"
+            app:layout_constraintStart_toStartOf="@+id/cL_crud_frag_categoria"
+            app:layout_constraintTop_toBottomOf="@+id/cL_crud_frag_categoria">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="143dp"
+                android:layout_height="31dp"
+                android:text="Crud herramientas"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.538" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cL_insert_actividad"
+            android:layout_width="158dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintEnd_toEndOf="@+id/cL_vista_cateHerra"
+            app:layout_constraintStart_toStartOf="@+id/cL_vista_cateHerra"
+            app:layout_constraintTop_toBottomOf="@+id/cL_vista_cateHerra">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="146dp"
+                android:layout_height="28dp"
+                android:text="Insertar actividad"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.538" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cL_vista_prestamo"
+            android:layout_width="158dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintEnd_toEndOf="@+id/cL_insert_actividad"
+            app:layout_constraintStart_toStartOf="@+id/cL_insert_actividad"
+            app:layout_constraintTop_toBottomOf="@+id/cL_insert_actividad">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="146dp"
+                android:layout_height="28dp"
+                android:text="Prestamo"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.538" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cL_regresar_menu"
+            android:layout_width="158dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintEnd_toEndOf="@+id/cL_vista_prestamo"
+            app:layout_constraintStart_toStartOf="@+id/cL_vista_prestamo"
+            app:layout_constraintTop_toBottomOf="@+id/cL_vista_prestamo">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="143dp"
+                android:layout_height="31dp"
+                android:text="Menu"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.538" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_salir_frag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="44dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/salir" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

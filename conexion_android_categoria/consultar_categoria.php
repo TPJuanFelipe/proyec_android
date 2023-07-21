@@ -2,14 +2,6 @@
 // Incluir el archivo de conexión a la base de datos
 include 'conexion.php';
 
-// Establecer la conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "p_inventariado");
-
-// Verificar la conexión
-if (mysqli_connect_errno()) {
-    die("Error al conectar con la base de datos: " . mysqli_connect_error());
-}
-
 // Preparar la consulta SQL para obtener las categorías
 $consulta = "SELECT * FROM categorias";
 
@@ -40,6 +32,7 @@ if ($resultado) {
     echo "Error al obtener las categorías de la base de datos: " . mysqli_error($conexion);
 }
 
-// Cerrar la conexión
+// Cerrar la conexión (if not already closed in "conexion.php")
 mysqli_close($conexion);
 ?>
+

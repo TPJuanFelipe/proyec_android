@@ -1,0 +1,83 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.proyect.categoria.crud_categoria">
+
+
+    <EditText
+        android:id="@+id/edt_nombre_cate_crud"
+        android:layout_width="320dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:hint="Nombre categoria"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_codigo_admin_crud"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="44dp"
+        android:ems="10"
+        android:hint="Codigo admin"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre_cate_crud" />
+
+    <EditText
+        android:id="@+id/edt_id_categoria_crud"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Id categoria "
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre_cate_crud" />
+
+    <ImageView
+        android:id="@+id/img_btn_insertar_cate_crud"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/insert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre_cate_crud" />
+
+    <ImageView
+        android:id="@+id/img_btn_modifi_cate_crud"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/modifi"
+        app:layout_constraintEnd_toStartOf="@+id/img_btn_eliminar_cate_crud"
+        app:layout_constraintStart_toEndOf="@+id/img_btn_insertar_cate_crud"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre_cate_crud" />
+
+    <ImageView
+        android:id="@+id/img_btn_eliminar_cate_crud"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="44dp"
+        android:src="@drawable/eliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre_cate_crud" />
+
+    <ImageView
+        android:id="@+id/img_regresardeCrudCate_menu"
+        android:layout_width="35dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/derecho"
+        app:layout_constraintEnd_toStartOf="@+id/edt_nombre_cate_crud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,7 +32,7 @@ public class Db_Herra  {
         this.context = context;
     }
     public void insert_Item_Herra(Item_Herramienta item) {
-        String url = "http://192.168.101.75:80/conexion_android/insertar_Herramientas.php";
+        String url = "http://192.168.43.79:80/conexion_android_herramienta/insertar_Herramientas.php";
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
         StringRequest stringRequest = new StringRequest( Request.Method.POST, url,

@@ -1,34 +1,30 @@
 <?php
-// Incluir el archivo de conexión a la base de datos
 include 'conexion.php';
 
-// Establecer la conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "p_inventariado");
+if(isset($_POST['id_categoria'], $_POST['categorias'], $_POST['identifi_admin'])) {
+    $id_categoria = mysqli_real_escape_string($conexion, $_POST['id_categoria']);
+    $categorias = mysqli_real_escape_string($conexion, $_POST['categorias']);
+    $identifi_admin = mysqli_real_escape_string($conexion, $_POST['identifi_admin']);
 
-// Verificar la conexión
-if (mysqli_connect_errno()) {
-    die("Error al conectar con la base de datos: " . mysqli_connect_error());
-}
+    // Corrected SQL query with placeholders
+    $modificar_cate = "UPDATE categorias SET categorias = ?, identifi_admin = ? WHERE id_categoria = ?";
 
-// Obtener los datos del formulario
-$id_categoria = $_POST['id_categoria'];
-$categorias = $_POST['categorias'];
-$identifi_admin = $_POST['identifi_admin'];
+    $consulta = mysqli_prepare($conexion, $modificar_cate);
+    if($consulta) {
+        mysqli_stmt_bind_param($consulta, 'ssi', $categorias, $identifi_admin, $id_categoria);
+        if(mysqli_stmt_execute($consulta)) {
+            echo "Categoría modificada con éxito.";
+        } else {
+            echo "Error al modificar la categoría: " . mysqli_stmt_error($consulta);
+        }
 
-// Preparar la consulta SQL para actualizar el registro
-$consulta = "UPDATE categorias SET categorias = '$categorias', identifi_admin = $identifi_admin WHERE id_categoria = $id_categoria";
-
-// Ejecutar la consulta
-$resultado = mysqli_query($conexion, $consulta);
-
-// Verificar si la modificación se realizó correctamente
-if ($resultado) {
-    echo "Registro modificado correctamente";
+        mysqli_stmt_close($consulta);
+    } else {
+        echo "Error en la preparación de la consulta: " . mysqli_error($conexion);
+    }
 } else {
-    echo "Error al modificar el registro: " . mysqli_error($conexion);
+    echo "Faltan parámetros necesarios.";
 }
 
-// Cerrar la conexión
 mysqli_close($conexion);
 ?>
-

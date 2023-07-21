@@ -36,4 +36,3 @@ if (isset($_POST['id_categoria'], $_POST['categorias'], $_POST['identifi_admin']
 // Cerrar la conexión
 mysqli_close($conexion);
 ?>
-
